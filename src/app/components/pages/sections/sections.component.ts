@@ -15,20 +15,32 @@ import { PrimarySectionService } from 'src/app/services/primary-section.service'
   styleUrls: ['./sections.component.scss'],
 })
 export class SectionsComponent implements OnInit, OnDestroy {
-  primarySectionTitle: string = 'Contabilidade';
+  primarySectionTitle: string = 'Faturamento';
 
   subSections: SubSection[] = [
-    { id: 1, title: '', primary_section_id: 1 },
-    { id: 2, title: '', primary_section_id: 1 },
-    { id: 3, title: '', primary_section_id: 1 },
-    { id: 4, title: '', primary_section_id: 1 },
-    { id: 5, title: '', primary_section_id: 1 },
-    { id: 6, title: '', primary_section_id: 1 },
-    { id: 7, title: '', primary_section_id: 1 },
-    { id: 8, title: '', primary_section_id: 1 },
+    { id: 1, title: 'Serviço', primary_section_id: 1 },
+    { id: 2, title: 'Contratos', primary_section_id: 1 },
+    { id: 3, title: 'Proprietárias', primary_section_id: 1 },
   ];
 
-  docs: Documentation[] = [];
+  docs: Documentation[] = [
+    { id: 1, title: 'Lorem Ipsum', sub_section_id: 1 },
+    { id: 2, title: 'Lorem Ipsum', sub_section_id: 1 },
+    { id: 3, title: 'Lorem Ipsum', sub_section_id: 1 },
+    { id: 4, title: 'Lorem Ipsum', sub_section_id: 1 },
+    { id: 5, title: 'Lorem Ipsum', sub_section_id: 1 },
+    { id: 6, title: 'Lorem Ipsum', sub_section_id: 2 },
+    { id: 7, title: 'Lorem Ipsum', sub_section_id: 2 },
+    { id: 8, title: 'Lorem Ipsum', sub_section_id: 2 },
+    { id: 9, title: 'Lorem Ipsum', sub_section_id: 2 },
+    { id: 10, title: 'Lorem Ipsum', sub_section_id: 2 },
+    { id: 11, title: 'Lorem Ipsum', sub_section_id: 2 },
+    { id: 16, title: 'Lorem Ipsum', sub_section_id: 2 },
+    { id: 12, title: 'Lorem Ipsum', sub_section_id: 3 },
+    { id: 13, title: 'Lorem Ipsum', sub_section_id: 3 },
+    { id: 14, title: 'Lorem Ipsum', sub_section_id: 3 },
+    { id: 15, title: 'Lorem Ipsum', sub_section_id: 3 },
+  ];
   docsList: FormControl = new FormControl();
 
   subscriptions!: Subscription;
