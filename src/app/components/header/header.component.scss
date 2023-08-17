@@ -1,0 +1,55 @@
+$header-height: 300px;
+
+#header {
+    width: 100%;
+    height: $header-height;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.4em;
+    color: #f1f1f1;
+    background: url("../../../assets/bg-header.png");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    // box-shadow: 0 4px 8px rgba(0, 0, 0, 0.77);
+
+    .glass-effect {
+        background-color: rgba(0, 0, 0, 0.619);
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: $header-height;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    img {
+        width: 140px;
+        position: absolute;
+        left: 40px;
+        z-index: 2;
+    }
+
+    .title {
+        font-size: 2.5em;
+        font-weight: 500;
+        margin-bottom: 10px;
+        z-index: 2;
+        font-family: 'Nunito', sans-serif;
+    }
+
+    span {
+        z-index: 2;
+    }
+
+    mat-form-field {
+        margin-top: 50px;
+        margin-bottom: -40px;
+        width: 580px;
+    }
+
+}

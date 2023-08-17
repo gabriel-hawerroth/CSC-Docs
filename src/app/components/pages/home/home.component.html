@@ -1,0 +1,46 @@
+<div class="home-page">
+    <app-header [title]="'Documentação das Customizações'"
+        [sub_title]="'Seja bem vindo a página com as documentações de customizações nos sistemas mantidos pelo CSC'">
+    </app-header>
+    <div class="primary-sections">
+        <div class="sections-box">
+            <div class="box">
+                <div class="section-box" *ngFor="let primarySection of primarySections"
+                    (click)="navigate(primarySection.id!)">
+                    <div class="img">
+                        <svg *ngIf="primarySection.title === 'Contabilidade'" height="68" viewBox="0 -960 960 960"
+                            width="68">
+                            <path
+                                d="M540-420q-50 0-85-35t-35-85q0-50 35-85t85-35q50 0 85 35t35 85q0 50-35 85t-85 35ZM220-280q-24.75 0-42.375-17.625T160-340v-400q0-24.75 17.625-42.375T220-800h640q24.75 0 42.375 17.625T920-740v400q0 24.75-17.625 42.375T860-280H220Zm100-60h440q0-42 29-71t71-29v-200q-42 0-71-29t-29-71H320q0 42-29 71t-71 29v200q42 0 71 29t29 71Zm480 180H100q-24.75 0-42.375-17.625T40-220v-460h60v460h700v60ZM220-340v-400 400Z" />
+                        </svg>
+                        <svg *ngIf="primarySection.title === 'Contas a pagar'" height="68" viewBox="0 -960 960 960"
+                            width="68">
+                            <path
+                                d="M653-240v-60h127L539-541 372-374 80-665l43-43 248 248 167-167 283 283v-123h59v227H653Z" />
+                        </svg>
+                        <svg *ngIf="primarySection.title === 'Faturamento'" height="68" viewBox="0 -960 960 960"
+                            width="68">
+                            <path
+                                d="m704-139 139-138-42-42-97 95-39-39-42 43 81 81ZM240-620h480v-60H240v60ZM732.5-41Q655-41 600-96.5T545-228q0-78.435 54.99-133.717Q654.98-417 733-417q77 0 132.5 55.283Q921-306.435 921-228q0 76-55.5 131.5T732.5-41ZM120-81v-699q0-24.75 17.625-42.375T180-840h600q24.75 0 42.375 17.625T840-780v327q-14.169-6.857-29.085-11.429Q796-469 780-472v-308H180v599h310q2.885 18.172 8.942 34.586Q505-130 513-114l-33 33-60-60-60 60-60-60-60 60-60-60-60 60Zm120-199h252.272q3.728-16 8.228-31t12.5-29H240v60Zm0-170h384q22-11 46-17.5t50-8.5v-34H240v60Zm-60 269v-599 599Z" />
+                        </svg>
+                        <svg *ngIf="primarySection.title === 'Facilities'" height="68" viewBox="0 -960 960 960"
+                            width="68">
+                            <path
+                                d="M180-120q-24 0-42-18t-18-42v-660h60v660h660v60H180Zm75-135v-334h119v334H255Zm198 0v-540h119v540H453Zm194 0v-170h119v170H647Z" />
+                        </svg>
+                        <svg *ngIf="primarySection.title === 'Contas a receber'" height="68" viewBox="0 -960 960 960"
+                            width="68">
+                            <path
+                                d="m123-240-43-43 292-291 167 167 241-241H653v-60h227v227h-59v-123L538-321 371-488 123-240Z" />
+                        </svg>
+                    </div>
+                    <div class="title">{{ primarySection.title }}</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="register-button">
+            <button mat-raised-button>Cadastrar</button>
+        </div>
+    </div>
+</div>

@@ -1,1 +1,127 @@
-/* You can add global styles to this file, and also import other style files */
+@import "/node_modules/@angular/material/theming";
+@import "/node_modules/@swimlane/ngx-datatable/index.css";
+@import "/node_modules/@swimlane/ngx-datatable/themes/material.scss";
+@import "/node_modules/@swimlane/ngx-datatable/assets/icons.css";
+@import "/node_modules/@angular/material/prebuilt-themes/indigo-pink.css";
+
+@include mat-core();
+
+@media (max-width: 1300px) and (max-height: 700px) {}
+
+$senior-color: #00c89b;
+
+$custom-app-primary: mat-palette($mat-teal, 700);
+$custom-app-secondary: mat-palette($mat-teal, 500);
+$custom-app-warn: mat-palette($mat-teal, 800);
+
+$custom-theme: mat-light-theme($custom-app-primary,
+        $custom-app-secondary,
+        $custom-app-warn);
+
+@include angular-material-theme($custom-theme);
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    user-select: none;
+}
+
+app-root {
+    width: 100%;
+    height: 100%;
+    color: black;
+    font-family: 'Roboto', sans-serif, Times;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+mat-form-field {
+    height: 73px;
+    margin-top: 7px;
+
+    .mdc-text-field--filled:not(.mdc-text-field--disabled) {
+        background-color: #f3f3f3;
+        padding-left: 8px;
+
+        &:hover {
+            background-color: #f3f3f3 !important;
+        }
+
+        &:focus {
+            background-color: #f3f3f3 !important;
+        }
+
+        &:active {
+            background-color: #f3f3f3 !important;
+        }
+    }
+}
+
+.mdc-text-field--filled:not(.mdc-text-field--disabled) {
+    background-color: transparent;
+}
+
+.mat-mdc-form-field-focus-overlay {
+    background-color: transparent;
+}
+
+
+.mat-accordion {
+    margin-top: 15px;
+    box-shadow: 1px 0 8px rgb(0 0 0/ 14%);
+
+    mat-panel-title h3 {
+        font-size: 1.25em;
+    }
+
+    .mat-expansion-panel-header {
+        height: 48px !important;
+    }
+
+    .mat-expansion-panel-body {
+        padding: 0px 12px 12px !important;
+    }
+}
+
+.custom-datatable.ngx-datatable.material.striped {
+    .datatable-row-odd {
+        background-color: white !important;
+
+        &:hover {
+            background-color: #f5f5f5 !important;
+            cursor: pointer;
+        }
+    }
+
+    .datatable-row-even {
+        background-color: #bae9e1 !important;
+
+        &:hover {
+            background-color: #ade4db !important;
+            cursor: pointer;
+        }
+    }
+}
+
+.material-symbols-outlined {
+    font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
+}
+
+.pointer {
+    cursor: pointer;
+}

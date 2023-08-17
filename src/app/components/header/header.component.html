@@ -1,0 +1,19 @@
+<div id="header">
+    <div class="glass-effect"></div>
+    <img src="./assets/csc.png" class="logo">
+    <span class="title">{{ title }}</span>
+    <span>{{ sub_title }}</span>
+    <mat-form-field>
+        <mat-label>Pesquisar em todo o site</mat-label>
+        <mat-select (valueChange)="onDocSearch($event)">
+            <mat-option>
+                <ngx-mat-select-search [formControl]="docsList" placeholderLabel="Informe o título da documentação"
+                    noEntriesFoundLabel="Nenhuma documentação encontrada">
+                </ngx-mat-select-search>
+            </mat-option>
+            <mat-option *ngFor="let doc of docs" [value]="doc.id">
+                {{ doc.title }}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+</div>
