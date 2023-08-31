@@ -1,0 +1,35 @@
+.initial-register {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 12%;
+    padding-bottom: 30px;
+
+    .box {
+        width: 200px;
+        height: 150px;
+        display: flex;
+        flex-direction: column;
+
+        .title {
+            width: 100%;
+            height: 45%;
+            display: flex;
+            justify-content: end;
+            align-items: center;
+            flex-direction: column;
+            font-size: 1.2em;
+        }
+
+        .number {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.8em;
+        }
+    }
+}

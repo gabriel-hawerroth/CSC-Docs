@@ -3,5 +3,6 @@ export interface DocSection {
   title: string;
   text: string;
   is_expansive: boolean;
-  doc_id: number;
+  docId: number;
+  presentation_sequence: number;
 }

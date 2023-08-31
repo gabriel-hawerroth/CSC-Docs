@@ -1,0 +1,45 @@
+<div class="register-page">
+    <div class="table-content">
+        <ngx-datatable [rows]="personSubSections" class="material striped table" [headerHeight]="48" [rowHeight]="52"
+            [footerHeight]="50" [limit]="6" [reorderable]="false" [messages]="{totalMessage: 'registros encontrados.'}"
+            (activate)="onSelectSection($event)">
+            <ngx-datatable-column name="Título" prop="title" [width]="300"></ngx-datatable-column>
+            <ngx-datatable-column name="Seção principal" prop="primarySectionTitle"
+                [width]="250"></ngx-datatable-column>
+        </ngx-datatable>
+    </div>
+    <div class="form-content">
+        <div class="buttons">
+            <button mat-fab (click)="newSubSection()" matTooltip="Nova sub seção" [disabled]="!formSubSection.value.id">
+                <span class="material-symbols-outlined">add</span>
+            </button>
+            <button mat-fab (click)="saveSubSection()" matTooltip="Salvar">
+                <span class="material-symbols-outlined">save</span>
+            </button>
+            <button mat-fab (click)="openConfirmationDialog()" class="delete-button" matTooltip="Excluir sub seção"
+                [disabled]="!formSubSection.value.id">
+                <span class="material-symbols-outlined">delete</span>
+            </button>
+        </div>
+        <form class="form" [formGroup]="formSubSection">
+            <div fxLayoutAlign="end">
+                <input type="hidden" formControlName="id">
+                <mat-form-field fxFlex="65">
+                    <mat-label>Título</mat-label>
+                    <input type="text" matInput maxlength="25" #titleInput formControlName="title">
+                    <mat-hint align="end">{{ titleInput.value.length }}/25</mat-hint>
+                </mat-form-field>
+            </div>
+            <div fxLayoutAlign="end">
+                <mat-form-field fxFlex="45">
+                    <mat-label>Seção principal</mat-label>
+                    <mat-select formControlName="primary_section_id">
+                        <mat-option *ngFor="let primarySec of primarySecsList" [value]="primarySec.id">
+                            {{ primarySec.title }}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+        </form>
+    </div>
+</div>

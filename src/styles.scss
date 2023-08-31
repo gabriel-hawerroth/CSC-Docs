@@ -37,7 +37,7 @@ app-root {
     width: 100%;
     height: 100%;
     color: black;
-    font-family: 'Roboto', sans-serif, Times;
+    font-family: 'Nunito', sans-serif, Times;
 }
 
 ::-webkit-scrollbar {
@@ -59,15 +59,15 @@ mat-form-field {
         padding-left: 8px;
 
         &:hover {
-            background-color: #f3f3f3 !important;
+            background-color: #f3f3f3;
         }
 
         &:focus {
-            background-color: #f3f3f3 !important;
+            background-color: #f3f3f3;
         }
 
         &:active {
-            background-color: #f3f3f3 !important;
+            background-color: #f3f3f3;
         }
     }
 }
@@ -98,7 +98,7 @@ mat-form-field {
     }
 }
 
-.custom-datatable.ngx-datatable.material.striped {
+.ngx-datatable.material.striped {
     .datatable-row-odd {
         background-color: white !important;
 
@@ -124,4 +124,64 @@ mat-form-field {
 
 .pointer {
     cursor: pointer;
+}
+
+.register-page {
+    margin: 2% 4.2% 0 4%;
+    padding: 10px;
+    display: flex;
+
+    .table-content {
+        width: 50%;
+        height: 470px;
+        padding: 2em 3em;
+
+        .table {
+            width: 90%;
+        }
+    }
+
+    .form-content {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+
+        .buttons {
+            width: 100%;
+            height: 15%;
+            display: flex;
+            justify-content: end;
+            align-items: end;
+            padding-right: 25px;
+
+            button {
+                margin-right: 15px;
+
+                span {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+            }
+        }
+
+        .form {
+            flex: 1;
+            padding: 3.5em 2.5em;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+
+            div {
+                display: flex;
+                flex-direction: row;
+                gap: 10px;
+            }
+        }
+    }
+}
+
+.delete-button {
+    color: white !important;
+    background-color: red !important;
 }

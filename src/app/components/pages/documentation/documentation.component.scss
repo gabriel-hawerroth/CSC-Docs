@@ -1,0 +1,137 @@
+$header-heigth: 125px;
+$attachment-width: 18%;
+
+.documentation-page {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+    .header-doc-page {
+        width: 100%;
+        height: $header-heigth;
+        border-bottom: 1px solid #009474;
+        background-color: #00b58e;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-family: 'Nunito';
+        font-size: 1.6em;
+        position: fixed;
+        z-index: 2;
+
+        .title {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+        .top-actions {
+            width: 10%;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+
+            span {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+    }
+
+    .row {
+        width: 100%;
+        height: calc(100% - $header-heigth);
+        display: flex;
+        margin-top: 125px;
+
+        .attachments {
+            width: $attachment-width;
+            border-left: 1px solid #56534e28;
+            background-color: #56534e28;
+            padding: 1.5em 0;
+            display: flex;
+            justify-content: center;
+            position: fixed;
+            right: 0;
+            height: 100%;
+
+            span {
+                width: 75%;
+                height: 55px;
+                border: 1px solid rgba(0, 0, 0, 0.184);
+                border-radius: 2px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: #56534e37;
+                color: rgb(98, 98, 98);
+            }
+        }
+
+        $sections-width: 75%;
+
+        .documentatin-body {
+            width: calc(100% - $attachment-width);
+            display: flex;
+            flex-direction: column;
+            padding: 2em 0 0 calc(50% - ($sections-width/2));
+            gap: 30px;
+            user-select: text;
+            font-family: 'Nunito';
+            font-size: 1.2em;
+
+            $text-color: #000000;
+
+            .expansion-panel {
+                width: $sections-width !important;
+                color: $text-color !important;
+                border: 1px solid #19bb9843;
+
+                &:hover {
+                    border: 1px solid #ecb900d6;
+                }
+
+                .expansion-panel-header {
+                    font-size: 1.2em;
+                    font-family: 'Nunito';
+                }
+
+                .section-body {
+                    width: 98%;
+                    text-align: justify;
+                    font-size: 1.2em;
+                    font-family: 'Nunito';
+                }
+
+                .subSec-expansion-panel {
+                    margin-top: 20px;
+                    margin-bottom: 10px;
+                    border: 1px solid #19bb9843;
+
+                    &:hover {
+                        border: 1px solid #ecb900d6;
+                    }
+                }
+            }
+
+            .not-expansive {
+                width: $sections-width;
+                padding: .7em;
+                margin-top: -15px;
+
+                .title-simple-text {
+                    font-size: 1.2em;
+                    margin-bottom: -15px;
+                }
+
+                .simple-text {
+                    color: $text-color !important;
+                    text-align: justify;
+                }
+            }
+        }
+    }
+}

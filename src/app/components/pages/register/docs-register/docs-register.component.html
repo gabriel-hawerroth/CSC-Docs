@@ -1,0 +1,44 @@
+<div class="register-page">
+    <div class="table-content">
+        <ngx-datatable [rows]="personDocs" class="material striped table" [headerHeight]="48" [rowHeight]="52"
+            [footerHeight]="50" [limit]="6" [reorderable]="false" [messages]="{totalMessage: 'registros encontrados.'}"
+            (activate)="onSelectSection($event)">
+            <ngx-datatable-column name="Título" prop="title" [width]="300"></ngx-datatable-column>
+            <ngx-datatable-column name="Seção secundária" prop="subSectionTitle" [width]="250"></ngx-datatable-column>
+        </ngx-datatable>
+    </div>
+    <div class="form-content">
+        <div class="buttons">
+            <button mat-fab (click)="newDoc()" matTooltip="Nova documentação" [disabled]="!formDoc.value.id">
+                <span class="material-symbols-outlined">add</span>
+            </button>
+            <button mat-fab (click)="saveDoc()" matTooltip="Salvar">
+                <span class="material-symbols-outlined">save</span>
+            </button>
+            <button mat-fab (click)="openConfirmationDialog()" matTooltip="Excluir documentação" class="delete-button"
+                [disabled]="!formDoc.value.id">
+                <span class="material-symbols-outlined">delete</span>
+            </button>
+        </div>
+        <form class="form" [formGroup]="formDoc">
+            <div fxLayout="row" fxLayoutAlign="end">
+                <input type="hidden" formControlName="id">
+                <mat-form-field fxFlex="65">
+                    <mat-label>Título</mat-label>
+                    <input type="text" matInput maxlength="25" #titleInput formControlName="title">
+                    <mat-hint align="end">{{ titleInput.value.length }}/25</mat-hint>
+                </mat-form-field>
+            </div>
+            <div fxLayout="row" fxLayoutAlign="end">
+                <mat-form-field fxFlex="40">
+                    <mat-label>Sub Seção</mat-label>
+                    <mat-select formControlName="subSectionId">
+                        <mat-option *ngFor="let subSec of subSectionsList" [value]="subSec.id">
+                            {{ subSec.title }}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable } from 'rxjs/internal/Observable';
 
 import { environment } from 'src/environments/environment';
 import { PrimarySection } from '../models/primary-section';
@@ -10,13 +10,9 @@ import { PrimarySection } from '../models/primary-section';
 })
 export class PrimarySectionService {
   private baseApiUrl = environment.baseApiUrl;
-  private apiUrl = `${this.baseApiUrl}primary-section`;
+  private apiUrl = `${this.baseApiUrl}primarySection`;
 
   constructor(private http: HttpClient) {}
-
-  createPrimarySection(primarySection: PrimarySection) {
-    return this.http.post<PrimarySection>(this.apiUrl, primarySection);
-  }
 
   getPrimarySections(): Observable<PrimarySection[]> {
     return this.http.get<PrimarySection[]>(this.apiUrl);
@@ -26,12 +22,11 @@ export class PrimarySectionService {
     return this.http.get<PrimarySection>(`${this.apiUrl}/${id}`);
   }
 
-  updatePrimarySection(formData: FormData) {
-    return this.http.put<FormData>(this.apiUrl, formData);
+  savePrimarySection(formData: FormData) {
+    return this.http.post<FormData>(this.apiUrl, formData);
   }
 
   removePrimarySection(id: number) {
-    const url = `${this.apiUrl}/${id}`;
-    return this.http.delete<PrimarySection>(url);
+    return this.http.delete(`${this.apiUrl}/${id}`);
   }
 }

@@ -1,1 +1,49 @@
-<p>documentation works!</p>
+<div *ngIf="doc && subSection" class="documentation-page">
+    <app-second-header [title]="doc.title" [back_page]="'/section/' + subSection.primarySectionId"
+        [ngStyle]="{position: 'fixed', width: '100%', 'z-index': '5'}"></app-second-header>
+    <div class="row">
+        <div class="documentatin-body">
+            <div class="doc-section" *ngFor="let docSection of docSections">
+                <mat-accordion class="mat-accordion" *ngIf="docSection.is_expansive">
+                    <mat-expansion-panel class="expansion-panel">
+                        <mat-expansion-panel-header>
+                            <mat-panel-title class="expansion-panel-header">
+                                <h3>{{ docSection.title }}</h3>
+                            </mat-panel-title>
+                        </mat-expansion-panel-header>
+
+                        <div class="section-body">{{ docSection.text }}</div>
+
+                        <div *ngFor="let docSubSection of docSubSections">
+                            <mat-accordion class="mat-accordion" *ngIf="docSubSection.docSectionId === docSection.id">
+                                <mat-expansion-panel class="subSec-expansion-panel">
+                                    <mat-expansion-panel-header>
+                                        <mat-panel-title class="expansion-panel-header">
+                                            <h3>{{ docSubSection.title }}</h3>
+                                        </mat-panel-title>
+                                    </mat-expansion-panel-header>
+
+                                    <div class="section-body">{{ docSubSection.text }}</div>
+                                </mat-expansion-panel>
+                            </mat-accordion>
+                        </div>
+                    </mat-expansion-panel>
+                </mat-accordion>
+
+                <div *ngIf="!docSection.is_expansive" class="not-expansive">
+                    <h3 class="title-simple-text" *ngIf="docSection.title.length > 0">{{ docSection.title }}</h3>
+                    <br>
+                    <div class="simple-text">{{ docSection.text }}</div>
+                </div>
+            </div>
+            <br>
+        </div>
+
+        <div class="attachments">
+            <span>Anexos</span>
+            <!-- <div class="anexos">
+                <span *ngFor="let attach of attachments"></span>
+            </div> -->
+        </div>
+    </div>
+</div>

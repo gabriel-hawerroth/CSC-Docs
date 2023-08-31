@@ -1,0 +1,29 @@
+<div class="initial-register-page">
+    <app-second-header [title]="'Cadastros'" [back_page]="'/'"></app-second-header>
+    <mat-tab-group class="tap-group" animationDuration="800ms">
+        <mat-tab class="tab">
+            <ng-template mat-tab-label>Welcome</ng-template>
+            <div class="tab-content">
+                <app-initial></app-initial>
+            </div>
+        </mat-tab>
+        <mat-tab class="tab">
+            <ng-template mat-tab-label>Seções principais</ng-template>
+            <div class="tab-content">
+                <app-primary-secs-register></app-primary-secs-register>
+            </div>
+        </mat-tab>
+        <mat-tab class="tab">
+            <ng-template mat-tab-label>Sub seções</ng-template>
+            <div class="tab-content">
+                <app-sub-secs-register></app-sub-secs-register>
+            </div>
+        </mat-tab>
+        <mat-tab class="tab">
+            <ng-template mat-tab-label>Documentações</ng-template>
+            <div class="tab-content">
+                <app-docs-register></app-docs-register>
+            </div>
+        </mat-tab>
+    </mat-tab-group>
+</div>

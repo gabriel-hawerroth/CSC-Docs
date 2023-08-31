@@ -22,6 +22,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
 import { NgxMatSelectSearchModule } from 'ngx-mat-select-search';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { MatTabsModule } from '@angular/material/tabs';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -29,6 +30,13 @@ import { HeaderComponent } from './components/header/header.component';
 import { HomeComponent } from './components/pages/home/home.component';
 import { SectionsComponent } from './components/pages/sections/sections.component';
 import { DocumentationComponent } from './components/pages/documentation/documentation.component';
+import { RegisterComponent } from './components/pages/register/register.component';
+import { SecondHeaderComponent } from './components/second-header/second-header.component';
+import { InitialComponent } from './components/pages/register/initial/initial.component';
+import { PrimarySecsRegisterComponent } from './components/pages/register/primary-secs-register/primary-secs-register.component';
+import { SubSecsRegisterComponent } from './components/pages/register/sub-secs-register/sub-secs-register.component';
+import { DocsRegisterComponent } from './components/pages/register/docs-register/docs-register.component';
+import { ConfirmationDialogComponent } from './utils/confirmation-dialog/confirmation-dialog.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +45,13 @@ import { DocumentationComponent } from './components/pages/documentation/documen
     HomeComponent,
     SectionsComponent,
     DocumentationComponent,
+    RegisterComponent,
+    SecondHeaderComponent,
+    InitialComponent,
+    PrimarySecsRegisterComponent,
+    SubSecsRegisterComponent,
+    DocsRegisterComponent,
+    ConfirmationDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -63,6 +78,7 @@ import { DocumentationComponent } from './components/pages/documentation/documen
     NgxMaskPipe,
     NgxMatSelectSearchModule,
     FlexLayoutModule,
+    MatTabsModule,
   ],
   providers: [
     provideNgxMask(),

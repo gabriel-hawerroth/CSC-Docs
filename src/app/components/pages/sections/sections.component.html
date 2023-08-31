@@ -8,7 +8,7 @@
                 </div>
                 <div class="docs-links">
                     <div class="doc" *ngFor="let doc of docs">
-                        <a *ngIf="doc.sub_section_id === subSection.id" (click)="navigate(doc.id!)">- {{
+                        <a *ngIf="doc.subSectionId === subSection.id" (click)="navigate(doc.id!)">- {{
                             doc.title }}</a>
                     </div>
                 </div>
